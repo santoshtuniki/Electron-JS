@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electron Processes</title>
+</head>
+
+<body>
+    <h2>Electron applications are structure with 2 processes: </h2>
+    <div>
+        <h3>Main Process</h3>
+        <ul>
+            <li>Only 1 main process for an application</li>
+            <li>Responsible for managing application lifecycle</li>
+            <li>Runs in Node.js environment</li>
+        </ul>
+
+        <h3>Renderer Process</h3>
+        <ul>
+            <li>Each Renderer Process corresponds to a web page or view in your Electron application.</li>
+            <li>Renderer Processes are sandboxed, which means they have limited access to Node.js APIs to enhance security.</li>
+            <li>Each BrowserWindow created in the Main Process has its own Renderer Process.</li>
+        </ul>
+    </div>
+
+    <script>
+        console.warn('Renderer Process')
+    </script>
+</body>
+
+</html>
