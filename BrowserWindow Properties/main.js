@@ -6,7 +6,7 @@ const createWindow = () => {
         width: 1000,
         height: 600,
         // frame: false,
-        backgroundColor: 'aqua',
+        backgroundColor: '#F7C136',
         // alwaysOnTop: true,
         title: 'Electron App',
         webPreferences: {
