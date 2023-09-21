@@ -1,6 +1,6 @@
-PASSING DATA FROM RENDERER TO MAIN USING ipcRenderer & ipcMain from ELECTRON
+# PASSING DATA FROM RENDERER TO MAIN USING ipcRenderer & ipcMain from ELECTRON
 
-        RENDERER    --->    MAIN
+#### RENDERER    --->    MAIN
 
 
 ##  <--------------------MAIN.JS--------------------->
