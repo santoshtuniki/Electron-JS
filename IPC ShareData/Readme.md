@@ -10,12 +10,26 @@ PASSING DATA FROM RENDERER TO MAIN USING ipcRenderer & ipcMain from ELECTRON
 ## These scripts run within the renderer context, but are granted more privileges by having "access to Node.js" APIs.
 
 ## To add preload.js to main.js:
+const createWindow = () => {
     const win = new BrowserWindow({
+        width: 800,
+        height: 600,
         webPreferences: {
             preload: __dirname + '/preload.js',
             contextIsolation: true,
-        }
-    })
+        },
+        backgroundColor: '#F7C136'
+    });
+
+    ipcMain.on('msg', (event, data) => {
+        console.log(data)
+        event.reply('reply', 'Thanks for the data')
+    });
+
+    win.loadFile('index.html')
+    win.webContents.openDevTools()
+
+}
 
 ## "contextIsolation" is a security feature that isolates the JavaScript context of the renderer process from the Node.js context. 
 
@@ -33,7 +47,10 @@ PASSING DATA FROM RENDERER TO MAIN USING ipcRenderer & ipcMain from ELECTRON
     const { contextBridge, ipcRenderer } = require('electron')
 
     contextBridge.exposeInMainWorld('electronAPI', {
-        render: () => ipcRenderer.send('msg', 'hello from renderer process')
+        dataToMain: () => ipcRenderer.send('msg', 'hello from renderer process'),
+        dataToRender: () => ipcRenderer.on('reply', (event, data) => {
+            console.log(data)
+        })
     })
 
 
@@ -44,7 +61,8 @@ PASSING DATA FROM RENDERER TO MAIN USING ipcRenderer & ipcMain from ELECTRON
 ## Add to renderer.js:
 
     function shareData() {
-        window.electronAPI.render()
+        window.electronAPI.dataToMain()
+        window.electronAPI.dataToRender()
     }
 
 
