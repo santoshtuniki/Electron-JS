@@ -1,0 +1,15 @@
+{
+  "name": "childwindow-no-renderer",
+  "version": "1.0.0",
+  "description": "## The Child window formed due to renderer process has only close button(X)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^15.5.7"
+  }
+}
