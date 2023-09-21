@@ -1,0 +1,16 @@
+{
+  "name": "non-installable-build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^15.5.7",
+    "electron-builder": "^24.6.4"
+  }
+}
