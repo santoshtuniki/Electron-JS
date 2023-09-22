@@ -1,0 +1,17 @@
+{
+  "name": "window-state",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "watch": "nodemon --exec electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^15.5.7",
+    "electron-window-state": "^5.0.3"
+  }
+}
