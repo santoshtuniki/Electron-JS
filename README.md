@@ -23,7 +23,9 @@
 
 		{
 			"scripts": {
-				"start": "electron ."
+				"start": "electron .",
+				"build": "electron-builder",
+				"watch": "nodemon --exec electron .",
 			}
 		}
 
