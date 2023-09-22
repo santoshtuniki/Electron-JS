@@ -8,7 +8,8 @@ const createWindow = () => {
             preload: __dirname + '/preload.js',
             contextIsolation: true,
         },
-        backgroundColor: '#F7C136'
+        backgroundColor: '#F7C136',
+        icon: 'browser-icon.png',
     });
 
     ipcMain.on('msg', (event, data) => {

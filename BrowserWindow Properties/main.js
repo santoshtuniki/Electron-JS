@@ -13,6 +13,7 @@ const createWindow = () => {
             nodeIntegration: true
         },
         // resizable: false,
+        icon: 'browser-icon.png',
     })
 
     win.loadFile('index.html');

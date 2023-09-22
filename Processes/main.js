@@ -9,7 +9,8 @@ const createWindow = () => {
         height: 600,
         webPreferences: {
             nodeIntegration: true
-        }
+        },
+        icon: 'browser-icon.png',
     })
 
     win.loadFile('index.html');

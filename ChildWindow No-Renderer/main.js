@@ -7,7 +7,8 @@ const createWindow = () => {
         webPreferences: {
             nodeIntegration: true
         },
-        backgroundColor: '#F7C136'
+        backgroundColor: '#F7C136',
+        icon: 'browser-icon.png',
     });
 
     win.loadFile('index.html');
