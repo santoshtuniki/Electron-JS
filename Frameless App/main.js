@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow } = require('electron');
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -11,10 +11,6 @@ const createWindow = () => {
 
     win.loadFile('index.html')
 }
-
-// app.whenReady().then(() => {
-//     createWindow()
-// });
 
 app.on('ready', () => {
     console.warn(app.isReady())
